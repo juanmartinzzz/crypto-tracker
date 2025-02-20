@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-palette1: #2f2b32;
+  --color-palette2: #a7bf2e;
+  --color-palette3: #faf8ed;
+  --color-palette4: #f95a37;
+
+  --font-family: 'Atkinson Hyperlegible Mono', monospace;
+  --font-display: 'Atkinson Hyperlegible Mono', monospace;
+
+  --color-palette1: #ff8195;
+  --color-palette2: #fdd5c8;
+  --color-palette3: #faf2e8;
+  --color-palette4: #f9476c;
+
+  /* --color-palette1: #042a38; */
+  /* --color-palette2: #f7f5eb; */
+  /* --color-palette3: #b32442; */
+  /* --color-palette4: #760933; */
+
+  /* --color-palette1: #b0c4c9; */
+  /* --color-palette2: #dce3e4; */
+  /* --color-palette3: #f8f7f4; */
+  /* --color-palette4: #41cee2; */
+}
+
+.test {
+  border: 2px dotted green;
+}
