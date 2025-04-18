@@ -100,6 +100,21 @@ const binance = {
       timestamp: new Date().getTime(),
     }));
   },
+  getTickerPrice: async ({freshForSeconds = 30}) => {
+    const localTickerPrice = binance.getFromLocalStorageIfFresh({key: 'localTickerPrice'});
+
+    if(localTickerPrice) {
+      console.log('Ticker price data still fresh in LocalStorage');
+      return localTickerPrice;
+    }
+
+    const response = await fetch(`${binance.urls.base}/${binance.urls.tickerPrice}`);
+    const data = await response.json();
+
+    binance.setToLocalStorage({key: 'localTickerPrice', value: data, freshForMilliseconds: freshForSeconds * 1000});
+
+    return data;
+  },
   getSymbols: async ({quoteCurrencyFilter = null}) => {
     const localSymbols = binance.getFromLocalStorageIfFresh({key: 'localSymbols'});
 
